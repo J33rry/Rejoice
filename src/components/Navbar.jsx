@@ -2,12 +2,24 @@ import { useState } from "react";
 import reel from "../assets/reel.mp4";
 import { IoPlayCircle } from "react-icons/io5";
 import { MdArrowOutward } from "react-icons/md";
+import { motion } from "framer-motion";
+
 function Navbar() {
     const [isOpen, setIsOpen] = useState(true);
     return (
         <div>
             {isOpen ? (
-                <div className="w-full h-[65vh] bg-[#edece7]">
+                <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "65vh" }}
+                    transition={{
+                        duration: 2,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 20,
+                    }}
+                    className="w-full h-[65vh] bg-[#edece7] fixed top-0 z-50"
+                >
                     <div className="nav flex justify-between items-center px-[3vw] font-['Helvetica_Neue'] font-regular text-black text-3xl pt-[2vw] tracking-tight">
                         <div>
                             <svg
@@ -93,7 +105,7 @@ function Navbar() {
                             )}
                         </div>
                     </div>
-                </div>
+                </motion.div>
             ) : (
                 <div className="flex justify-between p-[3vw] font-['Helvetica_Neue'] font-regular text-black text-3xl pt-[2vw] tracking-tight">
                     <div>The Venture Agency.</div>
