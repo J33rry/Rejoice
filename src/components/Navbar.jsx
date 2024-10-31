@@ -5,7 +5,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 
 function Navbar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
             {isOpen ? (
@@ -107,11 +107,11 @@ function Navbar() {
                     </div>
                 </motion.div>
             ) : (
-                <div className="flex justify-between p-[3vw] font-['Helvetica_Neue'] font-regular text-black text-3xl pt-[2vw] tracking-tight">
+                <div className="flex justify-between p-[3vw] font-['Helvetica_Neue'] font-regular text-white text-3xl pt-[2vw] tracking-tight bg-transparent absolute top-0 right-0 left-0 z-40">
                     <div>The Venture Agency.</div>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="hover:underline "
+                        className="hover:underline text-2xl font-light tracking-wide underline-offset-2 decoration-2"
                     >
                         Menu
                     </button>
