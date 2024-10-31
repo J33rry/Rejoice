@@ -1,12 +1,13 @@
 import { useState } from "react";
 import reel from "../assets/reel.mp4";
 import { IoPlayCircle } from "react-icons/io5";
+import { MdArrowOutward } from "react-icons/md";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(true);
     return (
         <div>
             {isOpen ? (
-                <div className="w-full h-[36vw] bg-red-700">
+                <div className="w-full h-[65vh] bg-[#edece7]">
                     <div className="nav flex justify-between items-center px-[3vw] font-['Helvetica_Neue'] font-regular text-black text-3xl pt-[2vw] tracking-tight">
                         <div>
                             <svg
@@ -25,7 +26,7 @@ function Navbar() {
                         </div>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="hover:underline text-2xl font-light tracking-wide"
+                            className="hover:underline text-2xl font-light tracking-wide underline-offset-4 decoration-2"
                         >
                             Close
                         </button>
@@ -47,7 +48,50 @@ function Navbar() {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/3 h-[20vw] bg-yellow-200 mr-20"></div>
+                        <div className="w-1/3 mr-20 flex-row whitespace-nowrap">
+                            {[
+                                "Home",
+                                "Work",
+                                "Services & Models",
+                                "About",
+                                "Contact",
+                            ].map((item, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`font-['Helvetica_Neue'] font-regular text-[3.5vw] leading-[3.5vw] ${
+                                            index === 0 && "underline"
+                                        } hover:underline decoration-2 underline-offset-4`}
+                                    >
+                                        {item}
+                                    </div>
+                                );
+                            })}
+                            <button className="border-zinc-900 border-2 rounded-full p-6 mt-10 text-xl hover:bg-black hover:text-zinc-50">
+                                Take a Seat
+                            </button>
+                        </div>
+                    </div>
+                    <div className="w-[95%] h-[.1vw] bg-zinc-900 mt-5 mx-auto"></div>
+                    <div className="w-[95%] mx-auto flex justify-between mt-4 text-xl tracking-wide">
+                        <p>Tomorrow&apos;s Brand,Today.&#8482;</p>
+                        <div className="flex gap-5">
+                            {["X", "Instagram", "LinkedIn"].map(
+                                (item, index) => {
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="flex items-center"
+                                        >
+                                            <p className="hover:underline underline-offset-2 decoration-2">
+                                                {item}
+                                            </p>
+                                            <MdArrowOutward />
+                                        </div>
+                                    );
+                                }
+                            )}
+                        </div>
                     </div>
                 </div>
             ) : (
