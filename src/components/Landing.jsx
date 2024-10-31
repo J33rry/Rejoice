@@ -3,8 +3,10 @@ import reel from "../assets/reel.mp4";
 
 function Landing() {
     return (
-        <div className="[&_svg]:absolute z-0">
+        <div className="[&_svg]:absolute z-0 ">
             <video
+                data-scroll
+                data-scroll-speed="0.2"
                 src={reel}
                 autoPlay={true}
                 loop
