@@ -1,3 +1,4 @@
+import Cards from "./components/Cards";
 import Landing from "./components/Landing";
 import Navbar from "./components/Navbar";
 import Work from "./components/Work";
@@ -10,6 +11,7 @@ function App() {
             <Navbar />
             <Landing />
             <Work />
+            <Cards />
         </div>
     );
 }
