@@ -1,42 +1,178 @@
 import { motion } from "framer-motion";
 import { BsArrowReturnLeft } from "react-icons/bs";
+const reveal = {
+    hidden: { opacity: 0, y: 20 },
+    show: () => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.2,
+            delay: 0.1,
+        },
+    }),
+};
+const lines = {
+    hidden: { opacity: 0, width: 0 },
+    show: {
+        opacity: 1,
+        width: "95%",
+        transition: {
+            duration: 0.5,
+            // delay: 0.5,
+        },
+    },
+};
 
 function Work() {
-    const words = [
-        "We use the power of narrative, design &",
-        " technology to transform founder's visions into",
-        "remarkable brands. We focus onpremium, luxury",
-        "and tech brands. We also offer two engagement",
-        "models, Agency & Venture. Your vision, your",
-        "choice.",
+    const line5 = [
+        "models,",
+        "Agency",
+        "&",
+        "Venture.",
+        "Your",
+        "vision,",
+        "your",
     ];
+    const line4 = [
+        "and",
+        " tech",
+        "brands.",
+        "We",
+        "also",
+        "offer",
+        "two",
+        "engagement",
+    ];
+    const line3 = [
+        "remarkable",
+        "brands.",
+        "We",
+        "focus",
+        "onpremium,",
+        "luxury",
+    ];
+    const line2 = [
+        " technology",
+        "to",
+        "transform",
+        " founder's",
+        "visions",
+        "into",
+    ];
+    const line1 = [
+        "We",
+        "use",
+        "the",
+        " power",
+        "of",
+        "narrative,",
+        "design",
+        "&",
+    ];
+    const line6 = ["choice."];
     return (
         <div>
             <div className="flex justify-between items-center p-10 text-3xl font-light tracking-wider mt-10 pb-5 whitespace-nowrap">
                 <div>Tomorrow&apos;s Brands, Today &#8482;</div>
                 <div>Paris/San Diego</div>
             </div>
-            <div className="w-[95%] h-[.1vw] bg-zinc-400 mx-auto"></div>
-            <div className="p-10 pt-5 text-7xl tracking-wider leading-15 ">
-                {words.map((lines, index) => {
-                    return (
-                        <motion.div
-                            data-scroll
-                            initial={{ translateY: "50%", opacity: 0 }}
-                            animate={{ translateY: "0", opacity: 1 }}
-                            transition={{
-                                duration: 0.25,
-                                delay: index * 0.2,
-                                cubic: [0, 1.11, 0.99, -0.02],
-                            }}
-                            key={index}
-                            className={index === 0 ? "ml-40" : ""}
-                            // className="translate-y-['-200%'] opacity-0.5 "
-                        >
-                            {lines}
-                        </motion.div>
-                    );
-                })}
+            <motion.div
+                variants={lines}
+                initial="hidden"
+                whileInView="show"
+                className="w-[95%] h-[.1vw] bg-zinc-400 mx-auto"
+            ></motion.div>
+            <div className="p-10 pt-5 text-[4vw] tracking-wider leading-[5vw] ">
+                <div className="flex gap-4">
+                    {line1.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+                <div className="flex gap-4">
+                    {line2.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+                <div className="flex gap-4">
+                    {line3.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+                <div className="flex gap-4">
+                    {line4.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+                <div className="flex gap-4">
+                    {line5.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
+                <div className="flex gap-4">
+                    {line6.map((word, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={reveal}
+                                initial="hidden"
+                                whileInView="show"
+                                custom={index}
+                            >
+                                {word}
+                            </motion.div>
+                        );
+                    })}
+                </div>
             </div>
             <div className="flex-row items-center justify-center mt-80">
                 <div className="flex items-center justify-center text-xl font-light gap-3">
@@ -47,8 +183,20 @@ function Work() {
                     <BsArrowReturnLeft className="-rotate-90" />
                 </div>
                 <div className="block flex-row text-center text-7xl tracking-wider hover:underline underline-offset-2 decoration-2 underline mt-5">
-                    <h1 className="">Explore our services</h1>
-                    <h1> and engagement models</h1>
+                    <motion.h1
+                        variants={reveal}
+                        initial="hidden"
+                        whileInView="show"
+                    >
+                        Explore our services
+                    </motion.h1>
+                    <motion.h1
+                        variants={reveal}
+                        initial="hidden"
+                        whileInView="show"
+                    >
+                        and engagement models
+                    </motion.h1>
                 </div>
             </div>
         </div>
