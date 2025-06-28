@@ -1,43 +1,46 @@
 {
-  "name": "rejoice",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@radix-ui/react-icons": "^1.3.1",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.11.11",
-    "locomotive-scroll": "^5.0.0-beta.21",
-    "lucide-react": "^0.454.0",
-    "rc-progress": "^4.0.0",
-    "react": "^18.3.1",
-    "react-circular-progressbar": "^2.1.0",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-spring": "^9.7.4",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.13.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "globals": "^15.11.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "vite": "^5.4.10"
-  }
+    "homepage": "https://J33rry.github.io/Rejoice",
+    "name": "rejoice",
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "dependencies": {
+        "@radix-ui/react-icons": "^1.3.1",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.11.11",
+        "locomotive-scroll": "^5.0.0-beta.21",
+        "lucide-react": "^0.454.0",
+        "rc-progress": "^4.0.0",
+        "react": "^18.3.1",
+        "react-circular-progressbar": "^2.1.0",
+        "react-dom": "^18.3.1",
+        "react-icons": "^5.3.0",
+        "react-spring": "^9.7.4",
+        "tailwind-merge": "^2.5.4",
+        "tailwindcss-animate": "^1.0.7"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.13.0",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "autoprefixer": "^10.4.20",
+        "eslint": "^9.13.0",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.14",
+        "gh-pages": "^6.3.0",
+        "globals": "^15.11.0",
+        "postcss": "^8.4.47",
+        "tailwindcss": "^3.4.14",
+        "vite": "^5.4.10"
+    }
 }
